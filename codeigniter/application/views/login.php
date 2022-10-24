@@ -6,7 +6,7 @@
 <body>
    
 <div class="container">
-    <h2>Codeigniter Form Validation</h2>
+    <h2>Connexion</h2>
    
     <?php echo validation_errors(); ?>
    
