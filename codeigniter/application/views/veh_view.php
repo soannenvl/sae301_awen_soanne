@@ -10,10 +10,9 @@ $puissance =    $vehArray[$key]['puissance'];
 
     echo("<div>");
         echo("<div>Type de véhicule: ".$type_vehicule."</div>");
+        echo("<div>Marque et Modéle: ".$marque." ".$modele."</div>");
         echo("<div>Kilométrage: ".$kilometrage."</div>");
         echo("<div>Nombre de places: ".$nb_places."</div>");
-        echo("<div>Marque: ".$marque."</div>");
-        echo("<div>Modele: ".$modele."</div>");
         echo("<div>Puissance chevaux: ".$puissance."</div>");
         echo("<br>");
     echo("</div>");
@@ -22,7 +21,7 @@ $puissance =    $vehArray[$key]['puissance'];
 
 <html>
 <head>
-    <title>vehicule list</title>
+    <title>Liste des vehicule</title>
 </head>
 <body>
 
