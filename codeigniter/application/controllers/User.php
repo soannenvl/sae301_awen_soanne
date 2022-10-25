@@ -74,6 +74,7 @@ public function Register() {
     $this->load->database();
     $this->load->view('register');
 
+    if($this->form_validation->run() == FALSE){
     $this->form_validation->set_rules('email', 'Email', 'required');
     $this->form_validation->set_rules('login', 'Login', 'required');
     $this->form_validation->set_rules('nom', 'Nom', 'required');
@@ -82,8 +83,11 @@ public function Register() {
     $this->form_validation->set_rules('password', 'Password', 'required');
     $this->form_validation->set_rules('verif_password', 'Verif_Password', 'required');
     
-    $this->load->model('Register_model');
-    $data['error'] = $this->Register_model->Register_verif();
 
+
+    $this->load->model('Register_model');
+    $data['error'] = $this->Register_model->Register_action();
+    redirect('user/login');
+    }
 }
 }

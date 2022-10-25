@@ -16,20 +16,35 @@
         </div>
 
         <div class="form-group">
+<<<<<<< HEAD
             <label for="Login">Login</label>
             <input type="text" class="form-control" value="<?php echo set_value('Login'); ?>" name="Login" placeholder="Entrer un nom d'utilisateur">
+=======
+            <label for="login">Login</label>
+            <input type="text" class="form-control" value="<?php echo set_value('login'); ?>" name="login" placeholder="Enter Login">
+>>>>>>> 6840018046beac767d0b090f791dbe34c932e80e
             <?php echo form_error('Login'); ?>
         </div>
 
         <div class="form-group">
+<<<<<<< HEAD
             <label for="Nom">Nom</label>
             <input type="text" class="form-control" value="<?php echo set_value('Nom'); ?>" name="Nom" placeholder="Entrer votre nom">
+=======
+            <label for="nom">Nom</label>
+            <input type="text" class="form-control" value="<?php echo set_value('nom'); ?>" name="nom" placeholder="Enter Name">
+>>>>>>> 6840018046beac767d0b090f791dbe34c932e80e
             <?php echo form_error('Nom'); ?>
         </div>
 
         <div class="form-group">
+<<<<<<< HEAD
             <label for="Prenom">Prenom</label>
             <input type="text" class="form-control" value="<?php echo set_value('Prenom'); ?>" name="Prenom" placeholder="Entrer votre prénom">
+=======
+            <label for="prenom">Prenom</label>
+            <input type="text" class="form-control" value="<?php echo set_value('prenom'); ?>" name="prenom" placeholder="Enter Prenom">
+>>>>>>> 6840018046beac767d0b090f791dbe34c932e80e
             <?php echo form_error('Prenom'); ?>
         </div>
 
