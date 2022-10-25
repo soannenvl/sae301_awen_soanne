@@ -23,16 +23,17 @@ if ($this->form_validation->run() == FALSE) {
     $password = $this->input->post('password');
 
     $user = $this->db->get_where('utilisateur',['email' => $email])->row();
-    
+    print_r($user);
+    print_r($email);
     if(!$user) {
         $this->session->set_flashdata('login_error', 'Please check your email or password and try again.', 300);
-        redirect('user/login');
+        //redirect('user/login');
     }
 
 
     if(!password_verify($password,$user->password)) {
         $this->session->set_flashdata('login_error', 'Please check your email or password and try again.', 300);
-        redirect('user/login');
+        //redirect('user/login');
     }
 
      $data = array(
@@ -45,15 +46,10 @@ if ($this->form_validation->run() == FALSE) {
         
     $this->session->set_userdata($data);
 
-    redirect('welcome_message'); // redirect to home
+    //redirect('welcome_message'); // redirect to home
     echo 'Login success!'; exit;
     
 }		
-}
-
-public function logout(){
-    $this->session->sess_destroy();
-    redirect('user/login');
 }
 }
 ?>

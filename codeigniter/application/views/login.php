@@ -19,7 +19,7 @@
         </div>
         <button type="submit" class="btn btn-primary">Login</button>
         <?php echo form_error('login_error'); ?>
-        <?php // form_close(); ?>
+        <?php form_close(); ?>
     </div>
 </body>
 </html>
