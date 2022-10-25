@@ -17,19 +17,19 @@
 
         <div class="form-group">
             <label for="Login">Nom d'utilisateur</label>
-            <input type="text" class="form-control" value="<?php echo set_value('Login'); ?>" name="login" placeholder="Entrer un nom d'utilisateur">
+            <input type="text" class="form-control" value="<?php echo set_value('login'); ?>" name="login" placeholder="Entrer un nom d'utilisateur">
             <?php echo form_error('Login'); ?>
         </div>
 
         <div class="form-group">
             <label for="Nom">Nom</label>
-            <input type="text" class="form-control" value="<?php echo set_value('Nom'); ?>" name="nom" placeholder="Entrer votre nom">
+            <input type="text" class="form-control" value="<?php echo set_value('nom'); ?>" name="nom" placeholder="Entrer votre nom">
             <?php echo form_error('Nom'); ?>
         </div>
 
         <div class="form-group">
             <label for="Prenom">Prenom</label>
-            <input type="text" class="form-control" value="<?php echo set_value('Prenom'); ?>" name="prenom" placeholder="Entrer votre prénom">
+            <input type="text" class="form-control" value="<?php echo set_value('prenom'); ?>" name="prenom" placeholder="Entrer votre prénom">
             <?php echo form_error('Prenom'); ?>
         </div>
 

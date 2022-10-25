@@ -26,43 +26,37 @@ if ($this->form_validation->run() == FALSE) {
 
     if(!$user) {
         echo("Please check your email and try again.");
-        //redirect('user/login');
-        
     }
+    
     if(md5($password)==$user->password){
-        if($user->type_utilisateur=="agent"){
-        $type="agent";
         $mdp="TRUE";
-        }
-        else{
-            $mdp="TRUE";
-        }
     }
+
     else{$mdp="FALSE";}
 
     if($mdp=="FALSE") {
         echo("Please check your password and try again.");
-        //redirect('user/login'); 
     }
+
     elseif($mdp=="TRUE"){
         $data = array(
-            'user_id' => $user->id,
             'first_name' => $user->prenom,
             'last_name' => $user->nom,
             'email' => $user->email,
             'type' =>$user->type_utilisateur
             );
-
-            if($type=="agent"){
+            $this->session->set_userdata($data);
+            
+            if($user->type_utilisateur=="agent"){
                 echo 'Login success! agent ;)';
-                redirect('CAMAAAAARCHE AGENT');
+                redirect('Vehicule/liste');
             }
             else{
                 echo 'Login success!';
-                redirect('CAMAAAAARCHE');
+                redirect('accueil/accueil');
             }
-        $this->session->set_userdata($data);
         
+
 
     }
      exit;
