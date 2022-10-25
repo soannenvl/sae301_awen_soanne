@@ -1,5 +1,15 @@
 
-/* connexion */ 
+/* login */ 
+
+
+#create{
+    list-style: none;
+    text-decoration: none;
+    color: black;
+    margin-left: 200px;
+    font-size: 16px;
+}
+
 .container{
  font-family: 'Karla'; 
  font-size: 20px;
@@ -60,7 +70,7 @@ input {
     border: 1px solid #53af57;
    }
 
-p{
+input p{
     font-size: 15px;
     margin-left: 210px;
 }
@@ -81,6 +91,55 @@ p{
     width: 38%;
     margin: 0 auto;
     padding-bottom: 10px;
+    justify-content: center;
+    text-align: center;
 }
 
+/* navbar */ 
 
+.navbar {
+    display: flex;
+    background-color: #53af57;
+}
+.nav-list {
+    width: 50%;
+    display: flex;
+    font-family: 'Karla';
+}
+  
+.nav-list li {
+    list-style: none;
+    padding: 26px 30px;
+}
+  
+.nav-list li a {
+    text-decoration: none;
+    color: white;
+}
+  
+.nav-list li a:hover {
+    color: black;
+}
+
+img{
+    width: 270px;
+    height: 40px;
+}
+.perso a{
+float: right;
+}
+
+/* footer */ 
+footer {
+    padding: 30px;
+    margin-top: 20%;
+    background-color: #53af57;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+p{
+    font-family: 'Karla';
+    padding: 10px;
+}

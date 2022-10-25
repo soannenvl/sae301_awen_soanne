@@ -7,7 +7,13 @@
 </head>
 
 <header>
-    
+    <div class="navbar">
+            <ul class="nav-list">
+                <li> <img src="../../css/img/logo_rentocar.svg" alt="Rentocar"/> </li>
+                <li class="perso"><a href="#Car">Mes locations</a></li>
+                <li class="perso"><a href="#file">Mon compte</a></li>
+            </ul>
+    </div>
 </header>
 
 <body>
@@ -33,8 +39,16 @@
         <?php echo form_error('login_error'); ?>
         <?php form_close(); ?>
 
-        <p><a href="http://localhost/sae301_awen_soanne/codeigniter/index.php/user/register">Créer un compte</a></p>
+        <p><a id="create" href="http://localhost/sae301_awen_soanne/codeigniter/index.php/user/register">Créer un compte</a></p>
     </div>
-    
 </body>
+
+<footer>
+        <p>Aide & Contact</p>
+        <p>Informations générales</p>
+        <p>RENTOCAR Partenaires</p>
+        <p>Mentions légales</p>
+        <p>Données personnelles</p>
+    
+</footer>
 </html>
