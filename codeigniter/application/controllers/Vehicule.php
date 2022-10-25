@@ -11,5 +11,5 @@ class Vehicule extends CI_Controller{
         $this->load->view('veh_view',$data);
     }
 }
-
 ?>
+
