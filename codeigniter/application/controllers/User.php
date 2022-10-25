@@ -87,7 +87,6 @@ public function Register() {
 
     $this->load->model('Register_model');
     $data['error'] = $this->Register_model->Register_action();
-    redirect('user/login');
     }
 }
 }

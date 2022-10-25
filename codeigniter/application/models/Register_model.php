@@ -31,6 +31,7 @@ function Register_action(){
                 );
 
                 print_r($data);
+                redirect('user/login');
                 return $this->db->insert('utilisateur',$data);
                 
 
