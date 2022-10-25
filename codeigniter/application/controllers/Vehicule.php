@@ -7,4 +7,5 @@ class Vehicule extends CI_Controller{
     }
 }
 
+
 ?>
