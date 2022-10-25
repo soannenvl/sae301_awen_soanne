@@ -23,34 +23,67 @@ if ($this->form_validation->run() == FALSE) {
     $password = $this->input->post('password');
 
     $user = $this->db->get_where('utilisateur',['email' => $email])->row();
-    print_r($user);
-    print_r($email);
+
     if(!$user) {
-        $this->session->set_flashdata('login_error', 'Please check your email or password and try again.', 300);
+        echo("Please check your email and try again.");
         //redirect('user/login');
+        
     }
-
-
-    if(!password_verify($password,$user->password)) {
-        $this->session->set_flashdata('login_error', 'Please check your email or password and try again.', 300);
-        //redirect('user/login');
+    if(md5($password)==$user->password){
+        if($user->type_utilisateur=="agent"){
+        $type="agent";
+        $mdp="TRUE";
+        }
+        else{
+            $mdp="TRUE";
+        }
     }
+    else{$mdp="FALSE";}
 
-     $data = array(
+    if($mdp=="FALSE") {
+        echo("Please check your password and try again.");
+        //redirect('user/login'); 
+    }
+    elseif($mdp=="TRUE"){
+        $data = array(
             'user_id' => $user->id,
             'first_name' => $user->prenom,
             'last_name' => $user->nom,
             'email' => $user->email,
+            'type' =>$user->type_utilisateur
             );
+            if($type=="agent"){
+                echo 'Login success! agent ;)';
+                redirect('CAMAAAAARCHE AGENT');
+            }
+            else{
+                echo 'Login success!';
+                redirect('CAMAAAAARCHE');
+            }
+        $this->session->set_userdata($data);
 
-        
-    $this->session->set_userdata($data);
-
-    //redirect('welcome_message'); // redirect to home
-    echo 'Login success!'; exit;
+    }
+     exit;
     
 }		
 }
-}
-?>
 
+public function Register() {
+    $this->load->library('session');
+    $this->load->library('form_validation');
+    $this->load->database();
+    $this->load->view('register');
+
+    $this->form_validation->set_rules('email', 'Email', 'required');
+    $this->form_validation->set_rules('login', 'Login', 'required');
+    $this->form_validation->set_rules('nom', 'Nom', 'required');
+    $this->form_validation->set_rules('prenom', 'Prenom', 'required');
+    $this->form_validation->set_rules('ddn', 'Ddn', 'required');
+    $this->form_validation->set_rules('password', 'Password', 'required');
+    $this->form_validation->set_rules('verif_password', 'Verif_Password', 'required');
+    
+    $this->load->model('Register_model');
+    $data['error'] = $this->Register_model->Register_verif();
+
+}
+}
