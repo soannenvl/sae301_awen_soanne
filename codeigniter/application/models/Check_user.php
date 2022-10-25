@@ -2,10 +2,12 @@
 
 Class Check_user extends CI_Model{
     
-    function check_user(){
+    function password_verify(){
         $this->load->database();
-        $user=$this->input->post('user');
-        $query = $this->db->query("SELECT * FROM utilisateur WHERE login='".$user."'");
+        $email = $this->input->post('email');
+        $user = $this->db->get_where('utilisateur',['email' => $email])->row();
+        $query = $this->db->query("SELECT * FROM utilisateur WHERE email='".$user."'");
+        print_r()
         return $query->result_array();
     }
 }
