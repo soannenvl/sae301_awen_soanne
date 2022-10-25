@@ -52,6 +52,7 @@ if ($this->form_validation->run() == FALSE) {
             'email' => $user->email,
             'type' =>$user->type_utilisateur
             );
+
             if($type=="agent"){
                 echo 'Login success! agent ;)';
                 redirect('CAMAAAAARCHE AGENT');
@@ -61,6 +62,7 @@ if ($this->form_validation->run() == FALSE) {
                 redirect('CAMAAAAARCHE');
             }
         $this->session->set_userdata($data);
+        
 
     }
      exit;
