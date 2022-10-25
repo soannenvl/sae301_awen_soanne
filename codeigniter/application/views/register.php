@@ -5,7 +5,16 @@
     <link rel="stylesheet" href="<?php echo base_url(); ?>css/style.css" />
 </head>
 <body>
-   
+<header>
+    <div class="navbar">
+            <ul class="nav-list">
+                <li> <img src="../../css/img/logo_rentocar.svg" alt="Rentocar"/> </li>
+                <li class="perso"><a href="#Car">Mes locations</a></li>
+                <li class="perso"><a href="#file">Mon compte</a></li>
+            </ul>
+    </div>
+</header>
+
 <div class="container_inscription">
 <h1> Créer un compte </h1>
         <?php echo form_open('User/Register'); ?>
@@ -56,4 +65,14 @@
         <?php form_close(); ?>
     </div>
 </body>
+
+<footer>
+        <p>Aide & Contact</p>
+        <p>Informations générales</p>
+        <p>RENTOCAR Partenaires</p>
+        <p>Mentions légales</p>
+        <p>Données personnelles</p>
+    
+</footer>
+
 </html>
