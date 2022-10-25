@@ -25,9 +25,8 @@ if ($this->form_validation->run() == FALSE) {
     $user = $this->db->get_where('utilisateur',['email' => $email])->row();
 
     if(!$user) {
-        $this->session->set_flashdata('login_error', 'Please check your email or password and try again.', 300);
-        redirect('user/login');
-        print("Please check your email and try again.");
+        echo("Please check your email and try again.");
+        //redirect('user/login');
         
     }
     if(md5($password)==$user->password){
@@ -42,10 +41,8 @@ if ($this->form_validation->run() == FALSE) {
     else{$mdp="FALSE";}
 
     if($mdp=="FALSE") {
-        $this->session->set_flashdata('login_error', 'Please check your email or password and try again.', 300);
-        redirect('user/login');
-        print("Please check your password and try again.");
-        
+        echo("Please check your password and try again.");
+        //redirect('user/login'); 
     }
     elseif($mdp=="TRUE"){
         $data = array(
@@ -70,6 +67,23 @@ if ($this->form_validation->run() == FALSE) {
     
 }		
 }
-}
-?>
 
+public function Register() {
+    $this->load->library('session');
+    $this->load->library('form_validation');
+    $this->load->database();
+    $this->load->view('register');
+
+    $this->form_validation->set_rules('email', 'Email', 'required');
+    $this->form_validation->set_rules('login', 'Login', 'required');
+    $this->form_validation->set_rules('nom', 'Nom', 'required');
+    $this->form_validation->set_rules('prenom', 'Prenom', 'required');
+    $this->form_validation->set_rules('ddn', 'Ddn', 'required');
+    $this->form_validation->set_rules('password', 'Password', 'required');
+    $this->form_validation->set_rules('verif_password', 'Verif_Password', 'required');
+    
+    $this->load->model('Register_model');
+    $data['error'] = $this->Register_model->Register_verif();
+
+}
+}
