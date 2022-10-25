@@ -22,14 +22,6 @@ Class Vehicule_model extends CI_Model{
 
         return $query->result_array();
     }
-    function verifajout(){
-        if is_numeric($val){
-            $val=$id
-        }
-        else{
-            $error = "Mauvais ID"
-        }
-    }
 }
 
 ?> 

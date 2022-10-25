@@ -6,7 +6,7 @@
 <body>
    
 <div class="container">
-        <?php echo form_open('user/login'); ?>
+        <?php echo form_open('User/login'); ?>
         <div class="form-group">
             <label for="email">Email address</label>
             <input type="email" class="form-control" value="<?php echo set_value('email'); ?>" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email">

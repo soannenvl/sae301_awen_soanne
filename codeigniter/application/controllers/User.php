@@ -26,13 +26,13 @@ if ($this->form_validation->run() == FALSE) {
     
     if(!$user) {
         $this->session->set_flashdata('login_error', 'Please check your email or password and try again.', 300);
-        redirect('/');
+        redirect('user/login');
     }
 
 
     if(!password_verify($password,$user->password)) {
         $this->session->set_flashdata('login_error', 'Please check your email or password and try again.', 300);
-        redirect('/');
+        redirect('user/login');
     }
 
      $data = array(
@@ -53,7 +53,7 @@ if ($this->form_validation->run() == FALSE) {
 
 public function logout(){
     $this->session->sess_destroy();
-    redirect('index.php/user/login');
+    redirect('user/login');
 }
 }
 ?>
