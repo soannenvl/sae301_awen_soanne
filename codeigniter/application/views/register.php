@@ -13,18 +13,18 @@
             <?php echo form_error('email'); ?>
         </div>
         <div class="form-group">
-            <label for="Login">Login</label>
-            <input type="text" class="form-control" value="<?php echo set_value('Login'); ?>" name="Login" placeholder="Enter Login">
+            <label for="login">Login</label>
+            <input type="text" class="form-control" value="<?php echo set_value('login'); ?>" name="login" placeholder="Enter Login">
             <?php echo form_error('Login'); ?>
         </div>
         <div class="form-group">
-            <label for="Nom">Nom</label>
-            <input type="text" class="form-control" value="<?php echo set_value('Nom'); ?>" name="Nom" placeholder="Enter Name">
+            <label for="nom">Nom</label>
+            <input type="text" class="form-control" value="<?php echo set_value('nom'); ?>" name="nom" placeholder="Enter Name">
             <?php echo form_error('Nom'); ?>
         </div>
         <div class="form-group">
-            <label for="Prenom">Prenom</label>
-            <input type="text" class="form-control" value="<?php echo set_value('Prenom'); ?>" name="Prenom" placeholder="Enter Prenom">
+            <label for="prenom">Prenom</label>
+            <input type="text" class="form-control" value="<?php echo set_value('prenom'); ?>" name="prenom" placeholder="Enter Prenom">
             <?php echo form_error('Prenom'); ?>
         </div>
         <div class="form-group">
