@@ -1,25 +1,19 @@
-header{
-    
-}
 
-
+/* connexion */ 
 .container{
  font-family: 'Karla'; 
  font-size: 20px;
  font-style: bold;
  font-weight: 700;
+ width:600px;
+ margin:0 auto;
+ margin-top:10%;
 }
 
 .form-group{
     display: flex;
     width:250px;
     height:30px;
-    }
-
-.container{
-    width:600px;
-    margin:0 auto;
-    margin-top:10%;
     }
 
 label{
@@ -70,3 +64,23 @@ p{
     font-size: 15px;
     margin-left: 210px;
 }
+
+/* inscription */ 
+.container_inscription{
+    width: 50%;
+    font-family: 'Karla'; 
+    font-size: 20px;
+    font-style: bold;
+    font-weight: 700;
+    width: 70%;
+    margin:0 auto;
+    margin-top:10%;
+}
+
+.container_inscription h1{
+    width: 38%;
+    margin: 0 auto;
+    padding-bottom: 10px;
+}
+
+
