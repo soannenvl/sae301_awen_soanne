@@ -29,9 +29,11 @@ function Register_action(){
                 'email'=>$email,
                 'type_utilisateur'=>"client",
                 );
+
                 print_r($data);
                 return $this->db->insert('utilisateur',$data);
                 
+
                 }
         else{
             $error="TRUE";

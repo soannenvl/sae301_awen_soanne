@@ -73,7 +73,7 @@ public function Register() {
     $this->load->library('form_validation');
     $this->load->database();
     $this->load->view('register');
-    
+
     if($this->form_validation->run() == FALSE){
     $this->form_validation->set_rules('email', 'Email', 'required');
     $this->form_validation->set_rules('login', 'Login', 'required');
@@ -87,7 +87,7 @@ public function Register() {
 
     $this->load->model('Register_model');
     $data['error'] = $this->Register_model->Register_action();
-    print_r($data);
+    redirect('user/login');
     }
 }
 }
