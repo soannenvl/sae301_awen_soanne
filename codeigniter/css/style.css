@@ -162,13 +162,11 @@ p{
 .form-group{
     width: 91%;
     padding: 60px;
-    border: 1px solid #f1f1f1;
     background: #53af57;
     border: solid;
     justify-content: center;
     font-family: 'Karla';
     font-size: 20px;
-    color: black;
 }
 
 .button{

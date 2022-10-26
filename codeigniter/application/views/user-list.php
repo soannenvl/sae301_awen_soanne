@@ -52,5 +52,5 @@
 <?php echo form_error('login_error'); ?>
 <?php form_close(); ?>
 
-<p class='creation_compte'><a href="http://localhost/sae301_awen_soanne/codeigniter/index.php/user/register">Créer un compte</a></p>
+<p class='creation_compte'><a href="http://localhost/sae301_awen_soanne/codeigniter/index.php/user/register">Ajouter un utilisateur</a></p>
 </div>
