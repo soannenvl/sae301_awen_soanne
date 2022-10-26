@@ -10,7 +10,7 @@ function list(){
     function check_location($id){
         $this->load->database();
         $query = $this->db->get_where('location',['vehicule_id' => $id])->row();
-        return $query;
+        return $query->result_array();
     }
     
     function delete_veh($id){
