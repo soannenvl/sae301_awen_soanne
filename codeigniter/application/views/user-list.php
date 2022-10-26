@@ -30,8 +30,8 @@
         </div>
 
 </div>
-<button><?php echo (anchor('Utilisateurs/delete/' . $userArray[$key]['id'], '[supprimer]'));?></button>
-<button ><?php echo (anchor('Utilisateurs/modif/' . $userArray[$key]['id'], '[augmenter]'));?></button>
+<div><?php echo (anchor('Utilisateurs/delete/' . $userArray[$key]['id'], '[supprimer]'));?></div>
+<div ><?php echo (anchor('Utilisateurs/change/' . $userArray[$key]['id'], '[Changer type]'));?></d>
 <?php print("<br>");
     } ?>
 
