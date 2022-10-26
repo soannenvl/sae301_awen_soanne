@@ -23,7 +23,7 @@
         <?php echo form_open('User/login'); ?>
         <div class="form-group">
             <label for="email">Adresse mail</label>
-            <input type="email" class="form-control" value="<?php echo set_value('email'); ?>" id="email" name="email" aria-describedby="emailHelp" placeholder="Entrer votre adresse mail">
+            <input type="text" class="form-control" value="<?php echo set_value('email'); ?>" id="email" name="email" aria-describedby="emailHelp" placeholder="Entrer votre adresse mail">
             <?php echo form_error('email'); ?>
         </div>
 

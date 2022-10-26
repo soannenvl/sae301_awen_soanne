@@ -3,11 +3,14 @@ class Client extends CI_Controller{
 
 
     function supr($id){
+        $this->load->library('session');
         $this->load->model('Client_model');
         $this->load->helper('url');
+        $this->load->database();
 
         $this->Client_model->supr_compte($id);
-        //redirect('client/client');
+
+        redirect('user/login');
     }
 
     function client(){

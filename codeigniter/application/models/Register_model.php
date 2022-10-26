@@ -1,6 +1,64 @@
 <?php
 Class Register_model extends CI_Model{
 
+    function login(){
+    if ($this->form_validation->run() == FALSE) {
+    } else {
+    
+        $login = $this->input->post('email');
+        $password = $this->input->post('password');
+    
+        $user = $this->db->get_where('utilisateur',['email' => $login])->row();
+        $userl = $this->db->get_where('utilisateur',['login' => $login])->row();
+        if(!$user) {
+            if(!$userl){
+                return("Please check your email and try again.");
+                redirect('User/login');
+            }
+            else{
+                $user=$userl;
+                if(md5($password)==$user->password){
+                    $mdp="TRUE";
+                }
+                else{$mdp="FALSE";}
+            }
+        }
+        else{
+
+
+        }
+    
+        if($mdp=="FALSE") {
+            echo("Please check your password and try again.");
+        }
+    
+        elseif($mdp=="TRUE"){
+            $data = array(
+                'id' => $user->id,
+                'first_name' => $user->prenom,
+                'last_name' => $user->nom,
+                'email' => $user->email,
+                'login' => $user->login,
+                'ddn' => $user->ddn,
+                'password' => $user->password,
+                'type' =>$user->type_utilisateur
+                );
+                $this->session->set_userdata($data);
+                
+                if($user->type_utilisateur=="agent"){
+                    echo 'Login success! agent ;)';
+                    redirect('utilisateurs/liste');
+                }
+                else{
+                    echo 'Login success!';
+                    redirect('client/client');
+                }
+    
+        }
+    
+    }
+}
+    
 
 function Register_action(){
     $this->load->library('form_validation');

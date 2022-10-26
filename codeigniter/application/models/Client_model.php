@@ -8,6 +8,17 @@ Class Client_model extends CI_Model{
 
     function supr_compte($id){
         $data=array('id'=>$id);
+        $data = array(
+            'id',
+            'first_name',
+            'last_name',
+            'email',
+            'login',
+            'ddn',
+            'password',
+            'type'
+            );
+        $this->session->unset_userdata($data);
         $this->db->delete('utilisateur', $data);
     }
 
