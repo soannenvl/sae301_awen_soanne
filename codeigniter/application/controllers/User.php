@@ -40,9 +40,13 @@ if ($this->form_validation->run() == FALSE) {
 
     elseif($mdp=="TRUE"){
         $data = array(
+            'id' => $user->id,
             'first_name' => $user->prenom,
             'last_name' => $user->nom,
             'email' => $user->email,
+            'login' => $user->login,
+            'ddn' => $user->ddn,
+            'password' => $user->password,
             'type' =>$user->type_utilisateur
             );
             $this->session->set_userdata($data);
@@ -55,8 +59,6 @@ if ($this->form_validation->run() == FALSE) {
                 echo 'Login success!';
                 redirect('accueil/accueil');
             }
-        
-
 
     }
      exit;
