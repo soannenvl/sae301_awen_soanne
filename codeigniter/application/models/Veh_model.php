@@ -1,6 +1,22 @@
 <?php
 Class Veh_model extends CI_Model{
     
+function list(){
+        $this->load->database();
+        $query = $this->db->query("SELECT * FROM vehicule");
+        return $query->result_array();
+    }
+
+    function check_location($id){
+        $this->load->database();
+        $query = $this->db->get_where('location',['vehicule_id' => $id])->row();
+        return $query;
+    }
+    
+    function delete_veh($id){
+        $data=array('id'=>$id);
+        $this->db->delete('vehicule', $data);
+    }
 
 function veh_action(){
     $this->load->library('form_validation');
@@ -34,5 +50,7 @@ function veh_action(){
                 }
 
     }
+
+
 }
 ?>

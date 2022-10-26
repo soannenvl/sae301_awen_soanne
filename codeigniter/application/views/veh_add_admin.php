@@ -54,13 +54,6 @@
             <label for="vitesse_max">Vitesse max</label>
             <input type="number" class="form-control" value="<?php echo set_value('vitesse_max'); ?>" name="vitesse_max" placeholder="Entrer la vitesse max du vehicule">
         </div>
-        
-
-
- 
-
-
-
 
         <button type="submit" class="submit">Créer</button>
         <?php echo form_error('login_error'); ?>
