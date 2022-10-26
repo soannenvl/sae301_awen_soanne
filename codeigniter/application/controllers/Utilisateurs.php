@@ -46,7 +46,11 @@ public function delete($id){
                         $this->Utilisateurs_model->delete_users($id);
                         redirect('Utilisateurs/liste');
                 }
-                echo("c'est le dernier agent, ne le supprimer pas !");
+                echo("
+                <div>c'est le dernier agent, ne le supprimer pas !</div>
+                <a href='http://localhost/sae301_awen_soanne/codeigniter/index.php/Utilisateurs/liste'>retour</a>
+                
+                ");
         }
         
         
