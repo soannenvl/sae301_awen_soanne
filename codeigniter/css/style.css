@@ -143,3 +143,54 @@ p{
     font-family: 'Karla';
     padding: 10px;
 }
+
+/* user-list */ 
+.container_users{
+    flex-direction: column;
+    color: black;
+}
+
+.container_users h1{
+    font-size: 50px;
+    text-align: center;
+    margin:50px;
+}
+.form{
+    padding: 90px;
+}
+
+.form-group{
+    width: 91%;
+    padding: 60px;
+    border: 1px solid #f1f1f1;
+    background: #53af57;
+    border: solid;
+    justify-content: center;
+    font-family: 'Karla';
+    font-size: 20px;
+    color: black;
+}
+
+.button{
+    padding: 10px;
+    margin: 10px;
+    background-color: #53af57 ;
+    width:6%;
+    text-align: center;
+    flex-direction: row;
+}
+
+.boutons{
+    display: flex;
+    
+}
+
+.button:hover{
+    background-color: white ;
+    border: 2px solid #53af57;
+}
+
+.creation_compte{
+    font-size: 20px;
+    text-align: center;
+}
