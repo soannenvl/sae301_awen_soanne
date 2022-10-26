@@ -1,16 +1,11 @@
 <?php
 class Veh extends CI_Controller{
-    function Liste(){
-        $this->load->model('Veh_model');
-        $data['vehArray'] = $this->Veh_model->list();
-        $this->load->view('Veh_admin',$data);
 
-}
-public function Register() {
+public function Add() {
     $this->load->library('session');
     $this->load->library('form_validation');
     $this->load->database();
-    $this->load->view('veh_admin');
+    $this->load->view('Veh_add_admin');
 
     if($this->form_validation->run() == FALSE){
     $this->form_validation->set_rules('type_vehicule', 'Type_vehicule', 'required');
@@ -28,6 +23,35 @@ public function Register() {
     $data['error'] = $this->Veh_model->Veh_action();
     }
 }
+function Liste(){
+    $this->load->model('Veh_model');
+    $data['vehArray'] = $this->Veh_model->list();
+    $this->load->view('Veh_list',$data);
+}
+
+public function delete($id){
+    $this->load->model('Veh_model');
+    $this->load->helper('url');
+
+    $location = $this->Veh_model->check_location($id);
+    if(!$location){
+        $this->Veh_model->delete_veh($id);
+        redirect('Veh/liste');  
+    }
+    else{
+                echo("
+        <div>Ce vehicule a une location en cour, ne le supprime pas !</div>
+        <a href='http://localhost/sae301_awen_soanne/codeigniter/index.php/Veh/liste'>retour</a>
+        
+        ");
+
+
+    }
+    
+    
+    
+}
+
 }
 
 ?>
