@@ -10,7 +10,7 @@ public function Register() {
     $this->load->library('session');
     $this->load->library('form_validation');
     $this->load->database();
-    $this->load->view('register');
+    $this->load->view('veh_admin');
 
     if($this->form_validation->run() == FALSE){
     $this->form_validation->set_rules('type_vehicule', 'Type_vehicule', 'required');

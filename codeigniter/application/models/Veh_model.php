@@ -5,8 +5,6 @@ Class Veh_model extends CI_Model{
 function veh_action(){
     $this->load->library('form_validation');
     $this->load->database();
-    
-
 
     $type_vehicule= $this->input->post('type_vehicule');
     $kilometrage= $this->input->post('kilometrage');

@@ -16,7 +16,7 @@
 </header>
 
 <div class="container_inscription">
-<h1> Créer un compte </h1>
+<h1> Créer un véhicule</h1>
         <?php echo form_open('Veh/Register'); ?>
         <div class="form-group">
             <label for="type_vehicule">Type de vehicule</label>
@@ -44,18 +44,23 @@
         </div>
         <div class="form-group">
             <label for="prix_location">Prix_location</label>
-            <input type="text" class="form-control" value="<?php echo set_value('prix_location'); ?>" name="prix_location" placeholder="Entrer le prix pour la location">
+            <input type="number" class="form-control" value="<?php echo set_value('prix_location'); ?>" name="prix_location" placeholder="Entrer le prix pour la location">
         </div>
         <div class="form-group">
-            <label for="modele">Modele</label>
-            <input type="text" class="form-control" value="<?php echo set_value('modele'); ?>" name="modele" placeholder="Entrer le Modele du vehicule">
+            <label for="etat">Etat</label>
+            <input type="text" class="form-control" value="<?php echo set_value('etat'); ?>" name="etat" placeholder="Entrer l'etat du vehicule">
         </div>
+        <div class="form-group">
+            <label for="vitesse_max">Vitesse max</label>
+            <input type="number" class="form-control" value="<?php echo set_value('vitesse_max'); ?>" name="vitesse_max" placeholder="Entrer la vitesse max du vehicule">
+        </div>
+        
 
 
  
 
- etat
- vitesse_max
+
+
 
         <button type="submit" class="submit">Créer</button>
         <?php echo form_error('login_error'); ?>
