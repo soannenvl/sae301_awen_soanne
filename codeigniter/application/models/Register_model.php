@@ -9,24 +9,22 @@ Class Register_model extends CI_Model{
         $password = $this->input->post('password');
     
         $user = $this->db->get_where('utilisateur',['email' => $login])->row();
-        $userl = $this->db->get_where('utilisateur',['login' => $login])->row();
+        //$userl = $this->db->get_where('utilisateur',['login' => $login])->row();
         if(!$user) {
-            if(!$userl){
+            //if(!$userl){
                 return("Please check your email and try again.");
                 redirect('User/login');
-            }
-            else{
-                $user=$userl;
-                if(md5($password)==$user->password){
-                    $mdp="TRUE";
-                }
-                else{$mdp="FALSE";}
-            }
-        }
-        else{
+            //}
+            //else{
+                //$user=$userl;
 
-
+            //}
         }
+        elseif(md5($password)==$user->password){
+            $mdp="TRUE";
+        }
+        else{$mdp="FALSE";}
+
     
         if($mdp=="FALSE") {
             echo("Please check your password and try again.");

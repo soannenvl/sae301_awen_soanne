@@ -7,7 +7,7 @@ Class Location_model extends CI_Model{
     }
     function check_date(){
         $this->load->database();
-        $sql = "SELECT * FROM `utilisateur` WHERE type_utilisateur = 'agent'";
+        $sql = "SELECT * FROM `location`";
         $query = $this->db->query($sql);
         return count($query->result_array());
     }
