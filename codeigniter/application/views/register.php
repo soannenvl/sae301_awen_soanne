@@ -11,7 +11,7 @@
                 <li> <img src="../../css/img/logo_rentocar.svg" alt="Rentocar"/> </li>
                 <li><a href="#Home">Accueil</a></li>
                 <li><a href="#Car">Mes locations</a></li>
-                <li><a href="#file">Mon compte</a></li>
+                <li><a href="http://[::1]/sae301_awen_soanne/codeigniter/index.php/client/client">Mon compte</a></li>
             </ul>
     </div>
 </header>

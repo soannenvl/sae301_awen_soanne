@@ -9,7 +9,7 @@
                 <li> <img src="../../css/img/logo_rentocar.svg" alt="Rentocar"/> </li>
                 <li><a href="#Home">Accueil</a></li>
                 <li><a href="#Car">Mes locations</a></li>
-                <li><a href="#file">Mon compte</a></li>
+                <li><a href="http://[::1]/sae301_awen_soanne/codeigniter/index.php/client/client">Mon compte</a></li>
             </ul>
     </div>
 </header>
@@ -42,6 +42,6 @@
 <?php echo form_error('veh_error'); ?>
 <?php form_close(); ?>
 
-<p><a class='button'href="http://localhost/sae301_awen_soanne/codeigniter/index.php/Veh/add">Créer un nouveau vehicule</a></p>
+<p><a class='button'href="http://localhost/sae301_awen_soanne/codeigniter/index.php/Veh/add">Ajouter un nouveau véhicule</a></p>
 </div>
 </body>
