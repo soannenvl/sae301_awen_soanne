@@ -1,5 +1,8 @@
-<meta charset="utf-8" />
+<head>
+    <meta charset="utf-8"/>
     <link rel="stylesheet" href="<?php echo base_url(); ?>css/style.css" />
+    <title>Liste des utilisateurs</title>
+</head>
 
 <div class="container_users">
     <h1> Utilisateurs </h1>
@@ -52,5 +55,5 @@
 <?php echo form_error('login_error'); ?>
 <?php form_close(); ?>
 
-<p class='creation_compte'><a href="http://localhost/sae301_awen_soanne/codeigniter/index.php/user/register">Ajouter un utilisateur</a></p>
+<p class='button'><a href="http://localhost/sae301_awen_soanne/codeigniter/index.php/user/register">Ajouter un utilisateur</a></p>
 </div>
