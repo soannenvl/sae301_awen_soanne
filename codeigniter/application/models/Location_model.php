@@ -7,9 +7,9 @@ Class Location_model extends CI_Model{
     }
     function check_date(){
         $this->load->database();
-        $sql = "SELECT * FROM `location`";
+        $sql = "SELECT `date_debut` FROM `location`";
         $query = $this->db->query($sql);
-        return count($query->result_array());
+        return $query->result_array();
     }
 
 
