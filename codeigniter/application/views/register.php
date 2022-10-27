@@ -9,8 +9,9 @@
     <div class="navbar">
             <ul class="nav-list">
                 <li> <img src="../../css/img/logo_rentocar.svg" alt="Rentocar"/> </li>
-                <li class="perso"><a href="#Car">Mes locations</a></li>
-                <li class="perso"><a href="#file">Mon compte</a></li>
+                <li><a href="#Home">Accueil</a></li>
+                <li><a href="#Car">Mes locations</a></li>
+                <li><a href="#file">Mon compte</a></li>
             </ul>
     </div>
 </header>
@@ -19,7 +20,7 @@
 <h1> Créer un compte </h1>
         <?php echo form_open('User/Register'); ?>
         <div class="form-group">
-            <label for="email">Email address</label>
+            <label for="email">Adresse mail</label>
             <input type="email" class="form-control" value="<?php echo set_value('email'); ?>" id="email" name="email" aria-describedby="emailHelp" placeholder="Entrer votre e-mail">
             <?php echo form_error('email'); ?>
         </div>
@@ -37,7 +38,7 @@
         </div>
 
         <div class="form-group">
-            <label for="Prenom">Prenom</label>
+            <label for="Prenom">Prénom</label>
             <input type="text" class="form-control" value="<?php echo set_value('prenom'); ?>" name="prenom" placeholder="Entrer votre prénom">
             <?php echo form_error('Prenom'); ?>
         </div>
@@ -55,24 +56,19 @@
         </div>
 
         <div class="form-group">
-            <label for="verif_password">Verification Mot de passe</label>
+            <label for="verif_password">Vérification Mot de passe</label>
             <input type="password" class="form-control" value="<?php echo set_value('verif_password'); ?>" name="verif_password" placeholder="Recopier le mot de passe">
             <?php echo form_error('verif_password'); ?>
         </div>
 
-        <button type="submit" class="submit">Créer</button>
+    <button type="submit" class="submit">Créer</button>
         <?php echo form_error('login_error'); ?>
         <?php form_close(); ?>
     </div>
+
+
 </body>
 
-<footer>
-        <p>Aide & Contact</p>
-        <p>Informations générales</p>
-        <p>RENTOCAR Partenaires</p>
-        <p>Mentions légales</p>
-        <p>Données personnelles</p>
-    
-</footer>
+
 
 </html>
