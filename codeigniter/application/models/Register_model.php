@@ -9,16 +9,9 @@ Class Register_model extends CI_Model{
         $password = $this->input->post('password');
     
         $user = $this->db->get_where('utilisateur',['email' => $login])->row();
-        //$userl = $this->db->get_where('utilisateur',['login' => $login])->row();
         if(!$user) {
-            //if(!$userl){
                 return("Please check your email and try again.");
                 redirect('User/login');
-            //}
-            //else{
-                //$user=$userl;
-
-            //}
         }
         elseif(md5($password)==$user->password){
             $mdp="TRUE";
@@ -41,6 +34,8 @@ Class Register_model extends CI_Model{
                 'password' => $user->password,
                 'type' =>$user->type_utilisateur
                 );
+
+                
                 $this->session->set_userdata($data);
                 
                 if($user->type_utilisateur=="agent"){
@@ -77,6 +72,7 @@ function Register_action(){
         if($password==$verif_password){
             if($login!=$loginv->login){
                 if($email!=$emailv->email){
+                    
                     $data=array(
                         'id'=>"",
                         'login'=>$login,
@@ -93,7 +89,7 @@ function Register_action(){
                 else{$error="Email déja existant";
                 return $error;}
             }
-            else{$error="Login déja éxistant";
+            else{$error="Login déja existant";
                 return $error;}
         }
         else{

@@ -23,6 +23,7 @@ public function Add() {
     $data['error'] = $this->Veh_model->Veh_action();
     }
 }
+
 function Liste(){
     $this->load->model('Veh_model');
     $data['vehArray'] = $this->Veh_model->list();

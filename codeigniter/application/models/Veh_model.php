@@ -9,7 +9,7 @@ function list(){
 
     function check_location($id){
         $this->load->database();
-        $query = $this->db->get_where('location',['vehicule_id' => $id])->row();
+        $query = $this->db->query("SELECT * FROM vehicule WHERE id=".$id);
         return $query->result_array();
     }
     

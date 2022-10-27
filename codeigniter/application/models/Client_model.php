@@ -25,9 +25,11 @@ Class Client_model extends CI_Model{
     function modif(){
     $this->load->library('session');
     $this->load->library('form_validation');
+
     if($this->form_validation->run() == FALSE){
         $this->load->library('session');
         $user=$this->session->userdata;
+        $password=$user['password'];
 
         $email= $this->input->post('email');
         if(!$email){$email=$user['email'];}
@@ -43,47 +45,34 @@ Class Client_model extends CI_Model{
 
         $ddn= $this->input->post('ddn');
         if(!$ddn){$ddn=$user['ddn'];}
+        
 
-        $verif_password=$this->input->post('verif_password');
-        $password=$this->input->post('password');
-
-        if(!$password){$password=$user['password'];
-            if(!$verif_password){$verif_password=$user['password'];}
-        }
-
-        elseif($password==$verif_password){
             $data=array(
                 'id'=>$user['id'],
                 'login'=>$login,
-                'password'=>md5($password),
+                'password'=>$password,
                 'nom'=>$nom,
                 'prenom'=>$prenom,
                 'ddn'=>$ddn,
                 'email'=>$email,
-                'type_utilisateur'=>"client",
+                'type_utilisateur'=>"client"
                 );
-                $this->session->set_userdata($data);
-        }
 
-            $data2=array(
-                'id'=>$user['id'],
-                'login'=>$login,
-                'password'=>md5($password),
-                'nom'=>$nom,
-                'prenom'=>$prenom,
-                'ddn'=>$ddn,
-                'email'=>$email,
-                'type_utilisateur'=>"client",
-                );
+                $data2 = array(
+                    'id' => $user['id'],
+                    'first_name' => $prenom,
+                    'last_name' => $nom,
+                    'email' => $email,
+                    'login' => $login,
+                    'ddn' => $ddn,
+                    'password' => $password,
+                    'type' =>"client"
+                    );
                 
-                $this->db->set($data2);
+                $this->db->set($data);
                 $this->db->where('id', $user['id']);
-                $this->db->update('utilisateur'); 
-
-                //$this->session->unset_userdata;
+                $this->db->update('utilisateur');
                 $this->session->set_userdata($data2);
-
-        
     }
     }
 }

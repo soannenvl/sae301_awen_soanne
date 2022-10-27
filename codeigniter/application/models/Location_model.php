@@ -1,9 +1,10 @@
 <?php
 Class Location_model extends CI_Model{
     
-    function listloc(){
-        $query = $this->db->query("SELECT * FROM `location` INNER JOIN `vehicule` ON `location`.vehicule_id = `vehicule`.id;");
+    function listloc($id){
+        $query = $this->db->query("SELECT * FROM `location` INNER JOIN `vehicule` ON `location`.vehicule_id = `vehicule`.id WHERE utilisateur_id=".$id);
         return $query->result_array();
+
     }
     function check_date(){
         $this->load->database();

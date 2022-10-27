@@ -49,21 +49,10 @@
             <input type="date" class="form-control" value="<?php echo set_value('ddn'); ?>" name="ddn" placeholder="<?php print($data['ddn']); ?>">
             <?php echo form_error('ddn'); ?>
         </div>
-        
-        <div class="form-group">
-            <label for="password">Mot de passe</label>
-            <input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="Changez votre mot de passe">
-            <?php echo form_error('password'); ?>
-        </div>
-
-        <div class="form-group">
-            <label for="verif_password">Verification Mot de passe</label>
-            <input type="password" class="form-control" value="<?php echo set_value('verif_password'); ?>" name="verif_password" placeholder="Recopier le mot de passe">
-            <?php echo form_error('verif_password'); ?>
-        </div>
 
         <button type="submit" class="submit">Changer</button>
-        <?php echo form_error('login_error'); ?>
+        <?php 
+        echo form_error('login_error'); ?>
         <?php form_close(); ?>
     </div>
 </body>
