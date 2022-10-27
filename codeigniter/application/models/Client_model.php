@@ -23,7 +23,9 @@ Class Client_model extends CI_Model{
     }
 
     function modif(){
-        
+    $this->load->library('session');
+    $this->load->library('form_validation');
+    if($this->form_validation->run() == FALSE){
         $this->load->library('session');
         $user=$this->session->userdata;
 
@@ -51,7 +53,7 @@ Class Client_model extends CI_Model{
 
         elseif($password==$verif_password){
             $data=array(
-                'id'=>"",
+                'id'=>$user['id'],
                 'login'=>$login,
                 'password'=>md5($password),
                 'nom'=>$nom,
@@ -60,12 +62,10 @@ Class Client_model extends CI_Model{
                 'email'=>$email,
                 'type_utilisateur'=>"client",
                 );
-                
-                //return $this->db->update('utilisateur',$data);
-                //$this->session->set_userdata($data);
+                $this->session->set_userdata($data);
         }
 
-            $data=array(
+            $data2=array(
                 'id'=>$user['id'],
                 'login'=>$login,
                 'password'=>md5($password),
@@ -76,12 +76,15 @@ Class Client_model extends CI_Model{
                 'type_utilisateur'=>"client",
                 );
                 
-                $this->db->set($data);
+                $this->db->set($data2);
                 $this->db->where('id', $user['id']);
-                $this->db->update('utilisateur');  
-                $this->session->set_userdata($data);
+                $this->db->update('utilisateur'); 
+
+                //$this->session->unset_userdata;
+                $this->session->set_userdata($data2);
+
         
     }
-
+    }
 }
 ?> 

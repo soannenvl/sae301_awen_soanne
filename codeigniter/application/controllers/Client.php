@@ -1,7 +1,6 @@
 <?php
 class Client extends CI_Controller{
 
-
     function supr($id){
         $this->load->library('session');
         $this->load->model('Client_model');
@@ -31,6 +30,31 @@ class Client extends CI_Controller{
 
         $this->load->view('modif_client');
         $this->Client_model->modif();
+    }
+function check_date(){
+    $now = date("Y-m-j");
+}
+    function annuler($id){
+        $this->load->library('session');
+        $this->load->model('location_model');
+        $this->load->helper('url');
+        $this->load->helper('date');
+
+        $this->load->database();
+
+        $date= $this->location_model->annul_location($id);
+        print_r();
+        //redirect('user/login');
+    }
+
+    function Locations(){
+        $this->load->library('session');
+        $this->load->library('form_validation');
+        $this->load->database();
+
+        $this->load->model('Location_model');
+        $data['location'] = $this->Location_model->listloc();
+        $this->load->view('location_view', $data);        
     }
 }
 ?>
