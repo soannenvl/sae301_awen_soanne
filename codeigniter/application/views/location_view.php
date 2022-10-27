@@ -1,5 +1,5 @@
 <div class="container">
-    <h1> Locations </h1>
+    <h1>Mes Locations </h1>
 
 <?php
 //print_r($location);

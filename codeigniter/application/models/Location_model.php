@@ -9,30 +9,24 @@ Class Location_model extends CI_Model{
         $this->load->database();
         $sql = "SELECT `date_debut` FROM `location`";
         $query = $this->db->query($sql);
-        return $query->result_array();
+        $query->result_array();
+
+        $date = $query->result_array;
+        $now = date("Y-m-j");
+        $date_debut=$date[0]['date_debut'];
+        
+        if($now>$date_debut){
+            return FALSE;     
+        }
+        elseif($now<$date_debut){
+            return TRUE;  
+        }
     }
 
 
     function annul_location($id){
-        $now = date("Y-m-j");
-
-
-        $this->db->where("id", $id); 
-
-        $date = $this->db->get("location");
-        $date_debut = $date[0]["date_debut"];
-
-        return $date_debut->result_array();
-
-        if($date<$now){
-           // $this->db->delete('location', $data);
-            return "peut etre supr";
-
-        }
-        else{
-            return "est déja passer peut pas etre passer";
-        }
-
+        $data=array('id'=>$id);
+        $this->db->delete('location', $data);
     }
 
 }

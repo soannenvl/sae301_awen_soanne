@@ -19,6 +19,7 @@ class Client extends CI_Controller{
         $this->load->model('Client_model');
         $data['clientUserdata'] = $this->Client_model->list();
         $this->load->view('option_client',$data);
+
     }
 
     function modif(){
@@ -30,35 +31,22 @@ class Client extends CI_Controller{
         $this->load->view('modif_client');
         $this->Client_model->modif();
     }
-function check_date(){
 
+function annuler($id){
     $this->load->library('session');
     $this->load->model('location_model');
     $this->load->helper('url');
     $this->load->helper('date');
-
     $this->load->database();
-
     $date= $this->location_model->check_date();
-    $now = date("Y-m-j");
-    $date_debut=$date[0]['date_debut'];
-
-    if($now<$date_debut){
-        print("date debut plus grand");     
-    }
-
-}
-    function annuler($id){
-        $this->load->library('session');
-        $this->load->model('location_model');
-        $this->load->helper('url');
-        $this->load->helper('date');
-
-        $this->load->database();
-
+    if($date==TRUE){
         $date= $this->location_model->annul_location($id);
-        //redirect('user/login');
     }
+    elseif($date==FALSE){
+        print('location en cour, vous ne pouvez pas la terminer !');
+        redirect('client/locations');
+    }
+}
 
     function Locations(){
         $this->load->library('session');
