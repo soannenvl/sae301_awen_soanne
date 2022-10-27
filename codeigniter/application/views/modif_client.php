@@ -11,13 +11,14 @@
                 <li> <img src="../../css/img/logo_rentocar.svg" alt="Rentocar"/> </li>
                 <li><a href="#Home">Accueil</a></li>
                 <li><a href="#Car">Mes locations</a></li>
-                <li><a href="#Account">Mon compte</a></li>
+                <li><a href="http://[::1]/sae301_awen_soanne/codeigniter/index.php/client/client">Mon compte</a></li>
             </ul>
     </div>
 </header>
+
 <?php $data=$this->session->userdata;?>
 <div class="container_inscription">
-<h1> modifier son compte </h1>
+<h1 class='h1_modif'> modifier son compte </h1>
 
         <?php echo form_open('Client/modif'); ?>
         <div class="form-group">

@@ -142,34 +142,31 @@ img{
 
 .boutons{
     display: flex;
+    padding: 30px;
 }
 
 .button{
     padding: 10px;
     margin: 10px;
-    background-color: #ababab ;
+    background-color: #ffffff ;
     width:20%;
     text-align: center;
     flex-direction: row;
-    border: none;
+    border: 1px solid #53af57;
     margin: auto;
     text-decoration: none;
     font-size: 13px;
 }
 
 .button_login{
-
     padding: 10px;
     margin: 10px;
-    background-color: #53af57 ;
+    background-color: #ffffff ;
+    border: 1px solid #53af57;
     width:60%;
     text-align: center;
     flex-direction: row;
-    border: none;
-    margin-left:150px;
 }
-
-
 
 .button:hover{
         background-color: white;
@@ -183,8 +180,36 @@ img{
         border: 1px solid #53af57;
 }
 
+
+
 .creation_compte{
     font-size: 20px;
     text-align: center;
 }
 
+.form-group-info{
+    width: 70%;
+    padding: 20px;
+    margin: 10px;
+    justify-content: center;
+    font-family: 'Karla';
+    font-size: 20px;
+    border: none;
+    align-items: center;
+    display: flex;
+    height:20px;
+}
+
+.h1_modif{
+    font-family: 'Karla';
+    font-size: 50px;
+    text-align: center;
+    margin:50px;
+}
+
+.container_info_client{
+    font-size: 20px;
+    width:900px;
+    margin:0 auto;
+    margin-top: 20px;
+   }
