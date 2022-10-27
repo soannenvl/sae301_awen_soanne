@@ -83,7 +83,7 @@ function annuler($id){
         $this->load->database();
 
         //$data['vehicule'] = $this->Client_veh_model->check_location();
-        $this->load->view('new_location');
+
 
         $this->form_validation->set_rules('date_debut', 'Date_debut', 'required');
         $this->form_validation->set_rules('date_fin', 'Date_fin', 'required');
@@ -92,7 +92,8 @@ function annuler($id){
 
 
         $data = $this->Client_veh_model->create_loc();
-            
+        array($data);
+        $this->load->view('new_location');
 
 
 

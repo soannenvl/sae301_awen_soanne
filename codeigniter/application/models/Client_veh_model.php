@@ -13,32 +13,37 @@ function list(){
         return $query->result_array();
     }
 
+
+
     function create_loc(){
         $this->load->library('form_validation');
         $this->load->database();
         //$loc = $this->db->get_where('location',['id' => $id])->row();
         
-        if($this->form_validation->run() == TRUE){
+        if($this->form_validation->run() == FALSE){
         $this->load->library('session');
         $user=$this->session->userdata;
 
         $debut= $this->input->post('date_debut');
         $fin= $this->input->post('date_fin');
         $km= $this->input->post('nb_km');
-        $prix="5"; //$loc->prix;
+        $prix="555"; //$loc->prix;
 
-
-        $data=array(
-            'id'=>"",
-            'date_debut'=>$debut,
-            'date_fin'=>$fin,
-            'nb_km'=>$km,
-            'prix_location'=>$prix,
-            'utilisateur_id'=>$user['id'],
-            'vehicule_id'=>''
-        );
-
-            return $this->db->insert('location',$data);
+        if($debut!=""){
+            $data=array(
+                'id'=>"",
+                'date_debut'=>$debut,
+                'date_fin'=>$fin,
+                'nb_km'=>$km,
+                'prix'=>$prix,
+                'utilisateur_id'=>$user['id'],
+                'vehicule_id'=>'1'
+            );
+            
+    
+                return $this->db->insert('location',$data);
+        }
+        
     }
     
     }

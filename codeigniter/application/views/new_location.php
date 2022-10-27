@@ -34,7 +34,7 @@
             <input type="number" class="form-control" value="<?php echo set_value('nb_km'); ?>" name="nb_km" placeholder="Entrer le nombre de kilométres">
         </div>
 
-        <button type="submit" class="submit"><?php // echo (anchor('Client/location/'. $vehicule[0]['id'], 'Louer'));?></button>
+        <button type="submit" class="submit">Louer</button>
         <?php
         form_close(); 
         ?>
