@@ -10,11 +10,13 @@
     <div class="navbar">
             <ul class="nav-list">
                 <li> <img src="../../css/img/logo_rentocar.svg" alt="Rentocar"/> </li>
-                <li class="perso"><a href="#Car">Mes locations</a></li>
-                <li class="perso"><a href="#file">Mon compte</a></li>
+                <li><a href="#Home">Accueil</a></li>
+                <li><a href="#Car">Mes locations</a></li>
+                <li><a href="#Account">Mon compte</a></li>
             </ul>
     </div>
 </header>
+
 <div>
 <h1>Vos informations</h1>
 <?php 
@@ -39,7 +41,7 @@ if(!$clientUserdata['login']){
                     <?php print($clientUserdata['email']); ?></div>
             </div>
             <div class="form">
-                <label for="login">Login </label>
+                <label for="login">Nom d'utilisateur </label>
                 <div type="text" class="form-control" name="login">
                     <?php print($clientUserdata['login']); ?></div>
             </div>
@@ -52,16 +54,5 @@ if(!$clientUserdata['login']){
     <div ><?php echo (anchor('client/modif/' . $clientUserdata['id'], '[Modifier des informations]'));?></d>
 </div>
 
-<body>
 
-</body>
-
-<footer>
-        <p>Aide & Contact</p>
-        <p>Informations générales</p>
-        <p>RENTOCAR Partenaires</p>
-        <p>Mentions légales</p>
-        <p>Données personnelles</p>
-    
-</footer>
 </html>
