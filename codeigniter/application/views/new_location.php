@@ -18,15 +18,17 @@
 
 <div class="container_inscription">
 <h1> Louer un vehicule </h1>
-        <?php echo form_open('client/location'); ?>
+
+        <?php 
+        echo form_open('client/location/'.$oui['id']); ?>
         <div class="form-group">
             <label for="date_debut">Date de debut</label>
             <input type="date" class="form-control" value="<?php echo set_value('date_debut'); ?>" name="date_debut">
         </div>
 
         <div class="form-group">
-            <label for="date_debut">Date de fin</label>
-            <input type="date" class="form-control" value="<?php echo set_value('date_debut'); ?>" name="date_debut">
+            <label for="date_fin">Date de fin</label>
+            <input type="date" class="form-control" value="<?php echo set_value('date_fin'); ?>" name="date_fin">
         </div>
 
         <div class="form-group">

@@ -28,7 +28,6 @@ class Client extends CI_Controller{
         $this->load->database();
         $this->load->model('Client_model');
 
-        $this->form_validation->set_rules('login','','');
         $this->load->view('modif_client');
         $this->Client_model->modif();
     }
@@ -76,7 +75,7 @@ function annuler($id){
         $this->load->view('vehicules',$data);
     }
 
-    function location(){
+    function location($id){
         $this->load->library('session');
         $this->load->library('form_validation');
         $this->load->model('Client_veh_model');
@@ -88,12 +87,11 @@ function annuler($id){
         $this->form_validation->set_rules('date_debut', 'Date_debut', 'required');
         $this->form_validation->set_rules('date_fin', 'Date_fin', 'required');
         $this->form_validation->set_rules('nb_km', 'nb_km ', 'required');
+        
+        $data = $this->Client_veh_model->create_loc($id);
 
-
-
-        $data = $this->Client_veh_model->create_loc();
-        array($data);
-        $this->load->view('new_location');
+        $oui['oui']=array('id'=>$id);
+        $this->load->view('new_location',$oui);
 
 
 
